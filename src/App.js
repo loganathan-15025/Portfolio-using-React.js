@@ -10,9 +10,29 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer"; // optional
 
+// Particle Background Component
+const ParticleBackground = () => {
+  return (
+    <>
+      {/* Floating Particles */}
+      <div className="particles">
+        {[...Array(20)].map((_, i) => (
+          <div key={i} className="particle" />
+        ))}
+      </div>
+
+      {/* Geometric Shapes */}
+      <div className="geo-shape circle"></div>
+      <div className="geo-shape triangle"></div>
+      <div className="geo-shape square"></div>
+    </>
+  );
+};
+
 function App() {
   return (
     <>
+      <ParticleBackground />
       <Header />
       <Home />
       <About />
