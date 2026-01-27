@@ -497,7 +497,7 @@ html {
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   z-index: 1000;
   transition: all 0.3s ease;
@@ -521,27 +521,61 @@ html {
 }
 
 .logo {
-  font-size: 30px;
+  position: absolute;
+  left: 3%;
+  font-size: 22px;
   font-family: "Orbitron", sans-serif;
-  background: linear-gradient(
-    135deg,
-    var(--neon-cyan),
-    var(--neon-pink),
-    var(--neon-purple)
-  );
-  background-size: 200% 200%;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
   text-decoration: none;
   font-weight: 700;
   opacity: 0;
-  animation:
-    slideTop 1s ease forwards,
-    gradientShift 3s ease infinite;
+  animation: slideTop 1s ease forwards;
   cursor: pointer;
-  transition: 0.3s ease;
-  text-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
+  display: flex;
+}
+
+.logo span {
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    #ff6b6b,
+    #feca57,
+    #48dbfb,
+    #ff9ff3,
+    #54a0ff,
+    #5f27cd
+  );
+  background-size: 300% 300%;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: rainbowShift 3s ease infinite;
+  animation-delay: calc(0.1s * var(--i));
+  transition: transform 0.3s ease;
+}
+
+@keyframes rainbowShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.logo:hover span {
+  animation: letterJump 0.5s ease forwards;
+  animation-delay: calc(0.05s * var(--i));
+}
+
+@keyframes letterJump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @keyframes gradientShift {
@@ -554,15 +588,14 @@ html {
   }
 }
 
-.logo:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 20px var(--neon-cyan));
+.logo-highlight {
+  margin-left: 5px;
+  font-weight: 900;
 }
 
 .navbar a {
-  display: inline-block;
+  display: inline-flex;
   font-size: 18px;
-  color: #fff;
   text-decoration: none;
   font-weight: 400;
   opacity: 0;
@@ -571,6 +604,43 @@ html {
   position: relative;
   padding: 8px 16px;
   transition: all 0.3s ease;
+}
+
+.navbar a span {
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    #ff6b6b,
+    #feca57,
+    #48dbfb,
+    #ff9ff3,
+    #54a0ff,
+    #5f27cd
+  );
+  background-size: 300% 300%;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: rainbowShift 3s ease infinite;
+  animation-delay: calc(0.1s * var(--j));
+  transition: transform 0.3s ease;
+}
+
+.navbar a:hover span {
+  animation:
+    navLetterJump 0.5s ease forwards,
+    rainbowShift 3s ease infinite;
+  animation-delay: calc(0.05s * var(--j));
+}
+
+@keyframes navLetterJump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 .navbar a::before {
@@ -593,10 +663,6 @@ html {
 
 .navbar a.active,
 .navbar a:hover {
-  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
   text-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
 }
 
@@ -936,7 +1002,7 @@ html {
 .glow::before {
   content: "";
   position: absolute;
-  inset: -15px;
+  inset: -5px;
   border-radius: 50%;
   background: conic-gradient(
     from 0deg,
@@ -952,7 +1018,7 @@ html {
 .glow::after {
   content: "";
   position: absolute;
-  inset: -15px;
+  inset: -5px;
   border-radius: 50%;
   background: conic-gradient(
     from 0deg,
@@ -980,11 +1046,11 @@ html {
   position: relative;
   width: 380px;
   height: 380px;
-  background: #050816;
+  background: transparent;
   border-radius: 50%;
   z-index: 1;
   overflow: hidden;
-  border: 5px solid rgba(255, 255, 255, 0.1);
+  border: none;
 }
 
 .image img {

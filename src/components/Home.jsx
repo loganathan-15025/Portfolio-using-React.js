@@ -60,12 +60,6 @@ const Home = () => {
           <span>Contact Me</span>
         </a>
       </div>
-
-      {/* Scroll Indicator */}
-      <div className="scroll-indicator">
-        <div className="mouse"></div>
-        <span>Scroll Down</span>
-      </div>
     </section>
   );
 };

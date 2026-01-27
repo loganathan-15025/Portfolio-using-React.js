@@ -72,24 +72,61 @@ const Header = () => {
         </div>
 
         <a href="#Home" className="logo">
-          Portfolio.
+          <span style={{ "--i": 0 }}>L</span>
+          <span style={{ "--i": 1 }}>o</span>
+          <span style={{ "--i": 2 }}>g</span>
+          <span style={{ "--i": 3 }}>a</span>
+          <span style={{ "--i": 4 }}>n</span>
+          <span style={{ "--i": 5 }}>a</span>
+          <span style={{ "--i": 6 }}>t</span>
+          <span style={{ "--i": 7 }}>h</span>
+          <span style={{ "--i": 8 }}>a</span>
+          <span style={{ "--i": 9 }}>n</span>
+          <span className="logo-highlight" style={{ "--i": 10 }}>
+            S
+          </span>
         </a>
 
         <nav className="navbar" id="navbar">
           <a href="#Home" style={{ "--i": 1 }}>
-            Home
+            <span style={{ "--j": 0 }}>H</span>
+            <span style={{ "--j": 1 }}>o</span>
+            <span style={{ "--j": 2 }}>m</span>
+            <span style={{ "--j": 3 }}>e</span>
           </a>
           <a href="#About" style={{ "--i": 2 }}>
-            About
+            <span style={{ "--j": 0 }}>A</span>
+            <span style={{ "--j": 1 }}>b</span>
+            <span style={{ "--j": 2 }}>o</span>
+            <span style={{ "--j": 3 }}>u</span>
+            <span style={{ "--j": 4 }}>t</span>
           </a>
           <a href="#Skills" style={{ "--i": 4 }}>
-            Skills
+            <span style={{ "--j": 0 }}>S</span>
+            <span style={{ "--j": 1 }}>k</span>
+            <span style={{ "--j": 2 }}>i</span>
+            <span style={{ "--j": 3 }}>l</span>
+            <span style={{ "--j": 4 }}>l</span>
+            <span style={{ "--j": 5 }}>s</span>
           </a>
           <a href="#Projects" style={{ "--i": 5 }}>
-            Projects
+            <span style={{ "--j": 0 }}>P</span>
+            <span style={{ "--j": 1 }}>r</span>
+            <span style={{ "--j": 2 }}>o</span>
+            <span style={{ "--j": 3 }}>j</span>
+            <span style={{ "--j": 4 }}>e</span>
+            <span style={{ "--j": 5 }}>c</span>
+            <span style={{ "--j": 6 }}>t</span>
+            <span style={{ "--j": 7 }}>s</span>
           </a>
           <a href="#Contact" style={{ "--i": 3 }}>
-            Contact
+            <span style={{ "--j": 0 }}>C</span>
+            <span style={{ "--j": 1 }}>o</span>
+            <span style={{ "--j": 2 }}>n</span>
+            <span style={{ "--j": 3 }}>t</span>
+            <span style={{ "--j": 4 }}>a</span>
+            <span style={{ "--j": 5 }}>c</span>
+            <span style={{ "--j": 6 }}>t</span>
           </a>
         </nav>
       </header>
