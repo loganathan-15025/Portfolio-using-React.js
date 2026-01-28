@@ -9,6 +9,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer"; // optional
+import CursorGlow from "./components/CursorGlow";
 
 // Particle Background Component
 const ParticleBackground = () => {
@@ -32,6 +33,7 @@ const ParticleBackground = () => {
 function App() {
   return (
     <>
+      <CursorGlow />
       <ParticleBackground />
       <Header />
       <Home />
