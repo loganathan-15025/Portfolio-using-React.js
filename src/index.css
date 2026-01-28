@@ -1257,7 +1257,7 @@ body::before {
   align-items: center;
   gap: 3rem;
   max-width: 1200px;
-  padding: 60px;
+  padding: 50px 60px;
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -1311,14 +1311,15 @@ body::before {
 
 .about-text {
   flex: 1;
-  padding: 20px;
+  padding: 20px 30px;
   position: relative;
   z-index: 1;
 }
 
 .about-image {
   flex: 0 0 auto;
-  margin-left: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .about-image img {
@@ -2082,16 +2083,16 @@ textarea::placeholder {
     margin-top: -20px; /* Move image further up, adjust value as needed */
   }
   .home-content {
-    margin-top: 10px !important;
+    margin-top: -30px !important;
     padding-top: 0 !important;
     margin-bottom: 100px !important; /* Proper gap below text content */
   }
   .home-img,
   .glow {
-    margin-bottom: 30px !important;
+    margin-bottom: 10px !important;
   }
   .home-content h1 {
-    margin-top: 10px !important;
+    margin-top: 0 !important;
   }
 
   .glow::after,
@@ -2114,11 +2115,11 @@ textarea::placeholder {
 
   .about-content {
     flex-direction: column-reverse; /* Image above text */
-    padding: 20px 0 0 0; /* Reduce top padding */
+    padding: 30px 20px; /* Proper padding all around */
   }
 
   .about-text {
-    padding: 0;
+    padding: 15px 10px;
   }
 
   .about-image {

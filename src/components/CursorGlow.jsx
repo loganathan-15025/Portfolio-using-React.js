@@ -1,12 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 const CursorGlow = () => {
   const canvasRef = useRef(null);
   const particlesRef = useRef([]);
   const mouseRef = useRef({ x: 0, y: 0 });
   const lastMouseRef = useRef({ x: 0, y: 0 });
-  const [isMoving, setIsMoving] = useState(false);
-  const moveTimeoutRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -100,8 +98,6 @@ const CursorGlow = () => {
 
       // Only create particles if moving fast enough
       if (distance > 2) {
-        setIsMoving(true);
-
         // Create particles based on movement speed
         const particleCount = Math.min(Math.floor(distance / 3), 5);
         for (let i = 0; i < particleCount; i++) {
@@ -122,14 +118,6 @@ const CursorGlow = () => {
       }
 
       lastMouseRef.current = { x: mouseRef.current.x, y: mouseRef.current.y };
-
-      // Clear previous timeout and set new one
-      if (moveTimeoutRef.current) {
-        clearTimeout(moveTimeoutRef.current);
-      }
-      moveTimeoutRef.current = setTimeout(() => {
-        setIsMoving(false);
-      }, 100);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -154,9 +142,6 @@ const CursorGlow = () => {
       window.removeEventListener("resize", resizeCanvas);
       window.removeEventListener("mousemove", handleMouseMove);
       cancelAnimationFrame(animationId);
-      if (moveTimeoutRef.current) {
-        clearTimeout(moveTimeoutRef.current);
-      }
     };
   }, []);
 
