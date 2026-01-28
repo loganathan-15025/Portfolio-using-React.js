@@ -1,6 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Home = () => {
+  const titles = [
+    "FULL-STACK DEVELOPER",
+    "AI ENGINEER",
+    "DATA ENGINEER",
+    "DATA ANALYST",
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false);
+
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % titles.length);
+        setIsVisible(true);
+      }, 500);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [titles.length]);
+
   return (
     <section className="home" id="Home">
       {/* Social Links */}
@@ -53,11 +76,11 @@ const Home = () => {
         <h1>
           Hi, I'm <span className="highlight-name">LOGANATHAN S</span>
         </h1>
-        <br />
-        <h3>FULL-STACK DEVELOPER</h3>
-        <br />
-        <a href="#Contact" className="btn">
-          <span>Contact Me</span>
+        <h3 className={`rotating-title ${isVisible ? "visible" : "hidden"}`}>
+          {titles[currentIndex]}
+        </h3>
+        <a href="#Contact" className="btn home-btn">
+          Contact Me
         </a>
       </div>
     </section>

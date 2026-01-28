@@ -65,12 +65,6 @@ const Header = () => {
       <div className="overlay" id="overlay"></div>
 
       <header className="header">
-        <div className="hamburger" id="hamburger">
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
-        </div>
-
         <a href="#Home" className="logo">
           <span style={{ "--i": 0 }}>L</span>
           <span style={{ "--i": 1 }}>o</span>
@@ -129,6 +123,12 @@ const Header = () => {
             <span style={{ "--j": 6 }}>t</span>
           </a>
         </nav>
+
+        <div className="hamburger" id="hamburger">
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
       </header>
     </>
   );
